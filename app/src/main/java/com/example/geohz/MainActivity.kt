@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Math.abs
 
 private lateinit var true_button:Button
 private lateinit var false_button:Button
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         questionTextView.setText(questionTextResId)
     }
     private fun backQuestion() {
-        currentIndex = (currentIndex - 1) % questionBank.size
+        currentIndex = abs(currentIndex - 1) % questionBank.size
         val questionTextResId = questionBank[currentIndex].textResId
         questionTextView.setText(questionTextResId)
     }
